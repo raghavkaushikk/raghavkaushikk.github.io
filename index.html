@@ -11,64 +11,57 @@
 :root {
     --bg: #0f172a;
     --text: #e2e8f0;
-    --card: rgba(30, 41, 59, 0.6);
+    --card: rgba(30,41,59,0.6);
     --accent: #38bdf8;
 }
 
 .light-mode {
     --bg: #f8fafc;
     --text: #0f172a;
-    --card: rgba(255, 255, 255, 0.6);
+    --card: rgba(255,255,255,0.6);
     --accent: #2563eb;
 }
 
-/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: var(--bg);
     color: var(--text);
-    transition: 0.3s;
     overflow-x: hidden;
 }
 
-/* ANIMATED BACKGROUND */
-body::before {
+/* BACKGROUND BLOBS */
+body::before, body::after {
     content: "";
     position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle at 20% 20%, #38bdf8, transparent),
-                radial-gradient(circle at 80% 80%, #6366f1, transparent);
-    opacity: 0.15;
-    animation: moveBg 15s linear infinite;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.3;
     z-index: -1;
 }
-
-@keyframes moveBg {
-    0% { transform: translate(0,0); }
-    50% { transform: translate(-10%, -10%); }
-    100% { transform: translate(0,0); }
+body::before {
+    background: #38bdf8;
+    top: -100px;
+    left: -100px;
+}
+body::after {
+    background: #6366f1;
+    bottom: -100px;
+    right: -100px;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* TOGGLE */
-#themeToggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 10px 14px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(12px);
     background: var(--card);
-    backdrop-filter: blur(10px);
-    color: var(--text);
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
 }
 
 /* HERO */
@@ -76,180 +69,173 @@ body::before {
     height: 100vh;
     display: flex;
     align-items: center;
+    padding: 0 10%;
 }
 
 .hero h1 {
-    font-size: 52px;
-    font-weight: 700;
+    font-size: 56px;
 }
 
-.highlight {
+.typing {
     color: var(--accent);
 }
 
-.hero p {
-    color: #94a3b8;
-    margin-top: 10px;
+/* BUTTON */
+.btn {
+    padding: 12px 24px;
+    background: linear-gradient(135deg,#38bdf8,#6366f1);
+    border-radius: 10px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    margin-top: 20px;
 }
 
-.tags span {
-    background: var(--card);
-    backdrop-filter: blur(10px);
-    padding: 6px 12px;
-    border-radius: 20px;
-    margin-right: 8px;
-    font-size: 14px;
-}
-
-/* SECTION */
+/* SECTIONS */
 .section {
-    padding: 80px 0;
+    padding: 100px 10%;
 }
 
 h2 {
-    font-size: 32px;
+    font-size: 36px;
+}
+
+/* TIMELINE */
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+}
+.timeline-item {
     margin-bottom: 30px;
 }
 
-/* GLASS CARD */
+/* CARDS */
 .card {
     background: var(--card);
     backdrop-filter: blur(12px);
-    padding: 25px;
+    padding: 20px;
     border-radius: 16px;
-    margin-bottom: 20px;
     transition: 0.3s;
-    border: 1px solid rgba(255,255,255,0.1);
 }
-
 .card:hover {
-    transform: translateY(-8px) scale(1.01);
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(56,189,248,0.3);
 }
 
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
     gap: 20px;
 }
 
-/* BUTTON */
-.btn {
-    display: inline-block;
-    padding: 12px 22px;
-    background: linear-gradient(135deg, #38bdf8, #6366f1);
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
-    margin-top: 15px;
-    transition: 0.3s;
+/* REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 1s;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.btn:hover {
-    transform: scale(1.05);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: #94a3b8;
+/* TOGGLE */
+#themeToggle {
+    cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<button id="themeToggle">🌙</button>
+<div class="navbar">
+    <div>Raghav</div>
+    <div id="themeToggle">🌙</div>
+</div>
 
 <!-- HERO -->
-<section class="hero container">
+<section class="hero">
     <div>
-        <h1>Hi, I'm <span class="highlight">Raghav Kaushik</span></h1>
-        <p>Senior Associate - Analytics | Risk Analyst</p>
-
-        <div class="tags">
-            <span>SQL</span>
-            <span>Fraud Analytics</span>
-            <span>Python</span>
-            <span>PostgreSQL</span>
-        </div>
-
-        <a href="YOUR_RESUME_LINK" class="btn">Download Resume</a>
+        <h1>Hi, I'm Raghav</h1>
+        <h2 class="typing"></h2>
+        <a href="#" class="btn">View Resume</a>
     </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="section container">
+<section class="section reveal">
     <h2>Experience</h2>
-
-    <div class="card">
-        <h3>WNS Global Services</h3>
-        <p><b>Senior Associate - Analytics</b></p>
-        <p>Fraud detection, SQL analysis, and behavioral insights.</p>
-    </div>
-
-    <div class="card">
-        <h3>CRIS</h3>
-        <p><b>Full Stack Developer Intern</b></p>
-        <p>Django + PostgreSQL + real-time dashboards.</p>
+    <div class="timeline">
+        <div class="timeline-item card">
+            <h3>WNS Global Services</h3>
+            <p>Fraud analytics, SQL insights, risk modeling</p>
+        </div>
+        <div class="timeline-item card">
+            <h3>CRIS</h3>
+            <p>Django + PostgreSQL development</p>
+        </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section class="section container">
+<section class="section reveal">
     <h2>Projects</h2>
-
     <div class="grid">
-        <div class="card"><h3>Diagnos_DB</h3></div>
-        <div class="card"><h3>Freight Tracking</h3></div>
-        <div class="card"><h3>Malware Detection</h3></div>
-        <div class="card"><h3>PG Life</h3></div>
+        <div class="card">Diagnos_DB</div>
+        <div class="card">Freight Tracking</div>
+        <div class="card">Malware Detection</div>
+        <div class="card">PG Life</div>
     </div>
 </section>
 
 <!-- SKILLS -->
-<section class="section container">
+<section class="section reveal">
     <h2>Skills</h2>
-
     <div class="grid">
-        <div class="card">Python, SQL, C++</div>
-        <div class="card">Django</div>
+        <div class="card">Python</div>
+        <div class="card">SQL</div>
         <div class="card">PostgreSQL</div>
         <div class="card">Fraud Analytics</div>
     </div>
 </section>
 
-<!-- CONTACT -->
-<section class="section container">
-    <h2>Contact</h2>
-    <p>📧 raghavkaushikk08@gmail.com</p>
-    <p>📞 +91 9319101768</p>
-</section>
-
-<footer>
-    © 2026 Raghav Kaushik
-</footer>
-
 <script>
+/* THEME */
 const toggle = document.getElementById("themeToggle");
-
-if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-mode");
-    toggle.innerText = "☀️";
-}
-
 toggle.onclick = () => {
     document.body.classList.toggle("light-mode");
-
-    if (document.body.classList.contains("light-mode")) {
-        localStorage.setItem("theme", "light");
-        toggle.innerText = "☀️";
-    } else {
-        localStorage.setItem("theme", "dark");
-        toggle.innerText = "🌙";
-    }
 };
+
+/* SCROLL REVEAL */
+window.addEventListener("scroll", () => {
+    document.querySelectorAll(".reveal").forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+            el.classList.add("active");
+        }
+    });
+});
+
+/* TYPING EFFECT */
+const text = ["Risk Analyst", "Data Analyst", "SQL Expert"];
+let i=0,j=0,current="",isDeleting=false;
+
+function type() {
+    current = text[i];
+    if(!isDeleting){
+        j++;
+        if(j==current.length) isDeleting=true;
+    } else {
+        j--;
+        if(j==0){
+            isDeleting=false;
+            i=(i+1)%text.length;
+        }
+    }
+    document.querySelector(".typing").innerText=current.substring(0,j);
+    setTimeout(type,100);
+}
+type();
 </script>
 
 </body>
