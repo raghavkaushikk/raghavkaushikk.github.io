@@ -5,29 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raghav Kaushik | Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 :root {
     --bg: #0f172a;
     --text: #e2e8f0;
-    --card: #1e293b;
+    --card: rgba(30, 41, 59, 0.6);
     --accent: #38bdf8;
 }
 
 .light-mode {
-    --bg: #ffffff;
+    --bg: #f8fafc;
     --text: #0f172a;
-    --card: #f1f5f9;
+    --card: rgba(255, 255, 255, 0.6);
     --accent: #2563eb;
 }
 
+/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: var(--bg);
     color: var(--text);
     transition: 0.3s;
+    overflow-x: hidden;
+}
+
+/* ANIMATED BACKGROUND */
+body::before {
+    content: "";
+    position: fixed;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 20%, #38bdf8, transparent),
+                radial-gradient(circle at 80% 80%, #6366f1, transparent);
+    opacity: 0.15;
+    animation: moveBg 15s linear infinite;
+    z-index: -1;
+}
+
+@keyframes moveBg {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(-10%, -10%); }
+    100% { transform: translate(0,0); }
 }
 
 .container {
@@ -42,10 +63,11 @@ body {
     top: 20px;
     right: 20px;
     padding: 10px 14px;
-    border-radius: 8px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     background: var(--card);
+    backdrop-filter: blur(10px);
     color: var(--text);
 }
 
@@ -57,18 +79,26 @@ body {
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.highlight {
+    color: var(--accent);
 }
 
 .hero p {
     color: #94a3b8;
+    margin-top: 10px;
 }
 
 .tags span {
     background: var(--card);
-    padding: 6px 10px;
-    border-radius: 6px;
+    backdrop-filter: blur(10px);
+    padding: 6px 12px;
+    border-radius: 20px;
     margin-right: 8px;
+    font-size: 14px;
 }
 
 /* SECTION */
@@ -77,38 +107,46 @@ body {
 }
 
 h2 {
+    font-size: 32px;
     margin-bottom: 30px;
 }
 
-/* CARD */
+/* GLASS CARD */
 .card {
     background: var(--card);
-    padding: 20px;
-    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 16px;
     margin-bottom: 20px;
     transition: 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.01);
 }
 
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
 }
 
 /* BUTTON */
 .btn {
     display: inline-block;
-    padding: 10px 20px;
-    background: var(--accent);
+    padding: 12px 22px;
+    background: linear-gradient(135deg, #38bdf8, #6366f1);
     color: white;
-    border-radius: 8px;
+    border-radius: 10px;
     text-decoration: none;
     margin-top: 15px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 /* FOOTER */
@@ -127,18 +165,17 @@ footer {
 <!-- HERO -->
 <section class="hero container">
     <div>
-        <h1>Raghav Kaushik</h1>
-        <p>Senior Associate - Analytics | Risk Analyst at WNS Global Services (Capgemini)</p>
+        <h1>Hi, I'm <span class="highlight">Raghav Kaushik</span></h1>
+        <p>Senior Associate - Analytics | Risk Analyst</p>
 
         <div class="tags">
             <span>SQL</span>
-            <span>Data Analysis</span>
             <span>Fraud Analytics</span>
             <span>Python</span>
             <span>PostgreSQL</span>
         </div>
 
-        <a href="https://drive.google.com/file/d/1qJhoOgX1Bm5QHaPHOjsKE4IK32VDwuGA/view?usp=sharing" class="btn">Download Resume</a>
+        <a href="YOUR_RESUME_LINK" class="btn">Download Resume</a>
     </div>
 </section>
 
@@ -147,26 +184,15 @@ footer {
     <h2>Experience</h2>
 
     <div class="card">
-        <h3>WNS Global Services (Capgemini)</h3>
+        <h3>WNS Global Services</h3>
         <p><b>Senior Associate - Analytics</b></p>
-        <p>Apr 2025 – Present | Gurugram</p>
-        <ul>
-            <li>Analyzed large-scale e-commerce transaction datasets using SQL to identify fraud patterns.</li>
-            <li>Built data validation pipelines improving model precision.</li>
-            <li>Performed behavioral analysis for risk classification.</li>
-            <li><b>Best Employee of the Quarter</b></li>
-        </ul>
+        <p>Fraud detection, SQL analysis, and behavioral insights.</p>
     </div>
 
     <div class="card">
         <h3>CRIS</h3>
         <p><b>Full Stack Developer Intern</b></p>
-        <p>Jul 2024 – Feb 2025</p>
-        <ul>
-            <li>Developed Django backend with PostgreSQL.</li>
-            <li>Optimized SQL queries for large datasets.</li>
-            <li>Built real-time dashboards using AJAX.</li>
-        </ul>
+        <p>Django + PostgreSQL + real-time dashboards.</p>
     </div>
 </section>
 
@@ -175,25 +201,10 @@ footer {
     <h2>Projects</h2>
 
     <div class="grid">
-        <div class="card">
-            <h3>Diagnos_DB</h3>
-            <p>PostgreSQL monitoring system for query performance and system health.</p>
-        </div>
-
-        <div class="card">
-            <h3>Freight Tracking</h3>
-            <p>Real-time freight movement system using Django & AJAX.</p>
-        </div>
-
-        <div class="card">
-            <h3>Malware Detection</h3>
-            <p>ML model achieving 99% accuracy.</p>
-        </div>
-
-        <div class="card">
-            <h3>PG Life</h3>
-            <p>Web app for PG listings by city.</p>
-        </div>
+        <div class="card"><h3>Diagnos_DB</h3></div>
+        <div class="card"><h3>Freight Tracking</h3></div>
+        <div class="card"><h3>Malware Detection</h3></div>
+        <div class="card"><h3>PG Life</h3></div>
     </div>
 </section>
 
@@ -202,22 +213,18 @@ footer {
     <h2>Skills</h2>
 
     <div class="grid">
-        <div class="card"><h3>Programming</h3><p>Python, SQL, C/C++, JavaScript</p></div>
-        <div class="card"><h3>Frameworks</h3><p>Django</p></div>
-        <div class="card"><h3>Databases</h3><p>PostgreSQL, MySQL</p></div>
-        <div class="card"><h3>Core Strengths</h3><p>Backend Dev, Query Optimization, Fraud Analytics</p></div>
+        <div class="card">Python, SQL, C++</div>
+        <div class="card">Django</div>
+        <div class="card">PostgreSQL</div>
+        <div class="card">Fraud Analytics</div>
     </div>
 </section>
 
 <!-- CONTACT -->
 <section class="section container">
     <h2>Contact</h2>
-    <p>📞 +91 9319101768</p>
     <p>📧 raghavkaushikk08@gmail.com</p>
-    <p>
-        <a href="https://github.com/raghavkaushikk">GitHub</a> |
-        <a href="https://www.linkedin.com/in/raghav-kaushik-4b9a69205/">LinkedIn</a>
-    </p>
+    <p>📞 +91 9319101768</p>
 </section>
 
 <footer>
