@@ -13,43 +13,23 @@
     --text: #e2e8f0;
     --card: rgba(30,41,59,0.6);
     --accent: #38bdf8;
+    --transition: 0.4s ease;
 }
 
 .light-mode {
     --bg: #f8fafc;
     --text: #0f172a;
-    --card: rgba(255,255,255,0.6);
+    --card: rgba(255,255,255,0.7);
     --accent: #2563eb;
 }
 
+/* GLOBAL */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     background: var(--bg);
     color: var(--text);
-    overflow-x: hidden;
-}
-
-/* BACKGROUND BLOBS */
-body::before, body::after {
-    content: "";
-    position: fixed;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    filter: blur(120px);
-    opacity: 0.3;
-    z-index: -1;
-}
-body::before {
-    background: #38bdf8;
-    top: -100px;
-    left: -100px;
-}
-body::after {
-    background: #6366f1;
-    bottom: -100px;
-    right: -100px;
+    transition: background var(--transition), color var(--transition);
 }
 
 /* NAVBAR */
@@ -58,31 +38,48 @@ body::after {
     top: 0;
     backdrop-filter: blur(12px);
     background: var(--card);
-    padding: 15px 40px;
+    padding: 15px 8%;
     display: flex;
     justify-content: space-between;
-    z-index: 100;
+    align-items: center;
+    transition: var(--transition);
+}
+
+.navbar h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* TOGGLE */
+#themeToggle {
+    cursor: pointer;
+    font-size: 18px;
 }
 
 /* HERO */
 .hero {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     align-items: center;
-    padding: 0 10%;
+    padding: 0 8%;
 }
 
 .hero h1 {
-    font-size: 56px;
+    font-size: 48px;
 }
 
-.typing {
+.hero span {
     color: var(--accent);
+}
+
+.hero p {
+    color: #94a3b8;
+    margin-top: 10px;
 }
 
 /* BUTTON */
 .btn {
-    padding: 12px 24px;
+    padding: 12px 22px;
     background: linear-gradient(135deg,#38bdf8,#6366f1);
     border-radius: 10px;
     text-decoration: none;
@@ -93,149 +90,165 @@ body::after {
 
 /* SECTIONS */
 .section {
-    padding: 100px 10%;
+    padding: 80px 8%;
 }
 
 h2 {
-    font-size: 36px;
-}
-
-/* TIMELINE */
-.timeline {
-    border-left: 2px solid var(--accent);
-    padding-left: 20px;
-}
-.timeline-item {
     margin-bottom: 30px;
 }
 
-/* CARDS */
+/* CARD */
 .card {
     background: var(--card);
-    backdrop-filter: blur(12px);
-    padding: 20px;
-    border-radius: 16px;
-    transition: 0.3s;
+    backdrop-filter: blur(10px);
+    padding: 22px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
 }
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 30px rgba(56,189,248,0.3);
+    transform: translateY(-6px);
 }
 
 /* GRID */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
     gap: 20px;
 }
 
-/* REVEAL */
-.reveal {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: 1s;
-}
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* TOGGLE */
-#themeToggle {
-    cursor: pointer;
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
 }
 </style>
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <div class="navbar">
-    <div>Raghav</div>
+    <h3>Raghav Kaushik</h3>
     <div id="themeToggle">🌙</div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
     <div>
-        <h1>Hi, I'm Raghav</h1>
-        <h2 class="typing"></h2>
-        <a href="#" class="btn">View Resume</a>
+        <h1>Hi, I'm <span>Raghav Kaushik</span></h1>
+        <p>Senior Associate - Analytics | Risk Analyst | SQL Specialist</p>
+        <a href="YOUR_RESUME_LINK" class="btn">Download Resume</a>
     </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section class="section reveal">
+<section class="section">
     <h2>Experience</h2>
-    <div class="timeline">
-        <div class="timeline-item card">
-            <h3>WNS Global Services</h3>
-            <p>Fraud analytics, SQL insights, risk modeling</p>
-        </div>
-        <div class="timeline-item card">
-            <h3>CRIS</h3>
-            <p>Django + PostgreSQL development</p>
-        </div>
+
+    <div class="card">
+        <h3>WNS Global Services (Capgemini)</h3>
+        <p><b>Senior Associate - Analytics</b> | Apr 2025 – Present</p>
+        <ul>
+            <li>Analyzed large-scale e-commerce datasets using SQL to detect fraud patterns.</li>
+            <li>Improved data validation pipelines enhancing model precision.</li>
+            <li>Performed behavioral analysis to classify high-risk transactions.</li>
+            <li><b>Recognized as Best Employee of the Quarter.</b></li>
+        </ul>
     </div>
+
+    <div class="card">
+        <h3>CRIS</h3>
+        <p><b>Full Stack Developer Intern</b> | Jul 2024 – Feb 2025</p>
+        <ul>
+            <li>Built backend systems using Django and PostgreSQL.</li>
+            <li>Optimized SQL queries for faster data retrieval.</li>
+            <li>Developed real-time dashboards using AJAX.</li>
+        </ul>
+    </div>
+
 </section>
 
 <!-- PROJECTS -->
-<section class="section reveal">
+<section class="section">
     <h2>Projects</h2>
+
     <div class="grid">
-        <div class="card">Diagnos_DB</div>
-        <div class="card">Freight Tracking</div>
-        <div class="card">Malware Detection</div>
-        <div class="card">PG Life</div>
+        <div class="card">
+            <h3>Diagnos_DB</h3>
+            <p>Database monitoring system tracking slow queries, locks, and performance metrics.</p>
+        </div>
+
+        <div class="card">
+            <h3>Freight Tracking System</h3>
+            <p>Live tracking system with maps, tooltips, and station analytics for Indian Railways.</p>
+        </div>
+
+        <div class="card">
+            <h3>Malware Detection</h3>
+            <p>Machine learning model achieving 99% accuracy in malware classification.</p>
+        </div>
+
+        <div class="card">
+            <h3>PG Life Website</h3>
+            <p>Web app for searching PG accommodations by city.</p>
+        </div>
     </div>
+
 </section>
 
 <!-- SKILLS -->
-<section class="section reveal">
+<section class="section">
     <h2>Skills</h2>
+
     <div class="grid">
-        <div class="card">Python</div>
-        <div class="card">SQL</div>
-        <div class="card">PostgreSQL</div>
-        <div class="card">Fraud Analytics</div>
+        <div class="card"><b>Languages:</b> Python, SQL, C++</div>
+        <div class="card"><b>Frameworks:</b> Django</div>
+        <div class="card"><b>Databases:</b> PostgreSQL, MySQL</div>
+        <div class="card"><b>Core:</b> Fraud Analytics, Backend Development</div>
     </div>
+
 </section>
 
+<!-- CONTACT -->
+<section class="section">
+    <h2>Contact</h2>
+    <p>📧 raghavkaushikk08@gmail.com</p>
+    <p>📞 +91 9319101768</p>
+    <p>
+        <a href="https://github.com/raghavkaushikk">GitHub</a> |
+        <a href="https://linkedin.com">LinkedIn</a>
+    </p>
+</section>
+
+<footer>
+    © 2026 Raghav Kaushik
+</footer>
+
 <script>
-/* THEME */
 const toggle = document.getElementById("themeToggle");
-toggle.onclick = () => {
-    document.body.classList.toggle("light-mode");
-};
 
-/* SCROLL REVEAL */
-window.addEventListener("scroll", () => {
-    document.querySelectorAll(".reveal").forEach(el => {
-        if (el.getBoundingClientRect().top < window.innerHeight - 100) {
-            el.classList.add("active");
-        }
-    });
-});
-
-/* TYPING EFFECT */
-const text = ["Risk Analyst", "Data Analyst", "SQL Expert"];
-let i=0,j=0,current="",isDeleting=false;
-
-function type() {
-    current = text[i];
-    if(!isDeleting){
-        j++;
-        if(j==current.length) isDeleting=true;
-    } else {
-        j--;
-        if(j==0){
-            isDeleting=false;
-            i=(i+1)%text.length;
-        }
-    }
-    document.querySelector(".typing").innerText=current.substring(0,j);
-    setTimeout(type,100);
+// load saved theme
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    toggle.innerText = "☀️";
 }
-type();
+
+// toggle smoothly
+toggle.onclick = () => {
+    document.body.style.transition = "all 0.4s ease";
+
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+        localStorage.setItem("theme", "light");
+        toggle.innerText = "☀️";
+    } else {
+        localStorage.setItem("theme", "dark");
+        toggle.innerText = "🌙";
+    }
+};
 </script>
 
 </body>
