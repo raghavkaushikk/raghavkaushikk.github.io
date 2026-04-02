@@ -1,306 +1,154 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Raghav Kaushik</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		
-		<style type="text/css" data-asas-style="">
-			body, div, a, p, span{ user-select: text !important; }
-			p, h1, h2, h3, h4, h5, h6{ cursor: auto; user-select: text !important; }
-			::selection{ background-color: #338FFF !important; color: #fff !important; }
-			/* EXPERIENCE SECTION */
-.experience-section {
-    max-width: 900px;
-    margin: 40px auto;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Raghav Kaushik | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #0f172a;
+    color: #e2e8f0;
 }
 
-/* CARD STYLE */
-.exp-card {
-    background: #ffffff;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero span {
+    color: #38bdf8;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 0;
+}
+
+/* CARDS */
+.card {
+    background: #1e293b;
+    padding: 20px;
     border-radius: 12px;
-    padding: 25px 30px;
-    margin-bottom: 25px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+    transition: 0.3s;
 }
 
-.exp-card:hover {
+.card:hover {
     transform: translateY(-5px);
 }
 
-/* HEADER */
-.exp-header h3 {
-    margin-bottom: 5px;
-    font-size: 20px;
-    font-weight: 600;
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
-.exp-role {
-    display: block;
-    font-weight: 500;
-    color: #555;
-    margin-bottom: 5px;
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #38bdf8;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 10px;
 }
+</style>
+</head>
 
-.exp-date {
-    font-size: 14px;
-    color: #888;
-}
+<body>
 
-/* BULLETS */
-.exp-card ul {
-    margin-top: 15px;
-    padding-left: 20px;
-}
-
-.exp-card ul li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-
-/* SUBTLE LEFT BORDER ACCENT */
-.exp-card {
-    border-left: 4px solid #338FFF;
-}
-		</style>
-	</head>
-	<body class>
-
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
-
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Raghav Kaushik</h1>
-						<p>Senior Associate - Analytics | Risk Analyst at WNS Global Services (Capgemini)</p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
-
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">PORTFOLIO</a>
-					</header>
-
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a class="solo scrolly" href="#main">SKILLS</a></li>
-							<li><a class="solo scrolly" href="#experience">EXPERIENCE</a></li>
-							<li><a class ="solo scrolly" href="#projects">PROJECTS</a></li>
-							<li><a href="https://drive.google.com/file/d/1qJhoOgX1Bm5QHaPHOjsKE4IK32VDwuGA/view?usp=sharing">RESUME</a></li>
-							<li><a class="solo scrolly" href="#footer">CONTACT ME</a></li>
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/raghav-kaushik-4b9a69205/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-							<li><a href="https://github.com/raghavkaushikk" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-							<li><a href="https://www.facebook.com/raghav.kaushik.08/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="https://www.instagram.com/raghavkaushikk/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							
-						</ul>
-					</nav>
-
-				<!-- Main -->
-					<div id="main">
-						<h2 style="
-						text-align: center;
-						font-family: 'Poppins', sans-serif;						
-					  ">
-					  Areas of Interest
-					</h2>
-					<div class="row">
-						<div class="col-4 col-12-small" style="align-items: center">
-						  <div class="card">
-							<div style="text-align: center">
-							  <img height="65" width="65" src="./images/softdev.png" alt="">
-							</div>
-			  
-							<ul style="list-style-type: none">
-							  <li>
-								<h3 class="skill-heading" style="
-									text-align: center;
-									font-family: 'Poppins', sans-serif;
-								  ">
-								  Software Development
-								</h3>
-							  </li>
-							  <li class="skill-sub" style="text-align: center">
-							   Worked on: C/C++, HTML/CSS, Python, Django, JavaScript, AJAX
-							  </li>
-							</ul>
-						  </div>
-						</div>
-						<div class="col-4 col-12-small">
-						  <div class="card">
-							<div style="text-align: center">
-							  <img height="65" width="65" src="./images/ds.png" alt="">
-							</div>
-			  
-							<ul style="list-style-type: none">
-							  <li>
-								<h3 class="skill-heading" style="
-									text-align: center;
-									font-family: 'Poppins', sans-serif;
-								  ">
-								  Data Science
-								</h3>
-							  </li>
-							  <li class="skill-sub" style="text-align: center">
-								Worked on: Database Management, Data Visualization, Data Analysis
-							  </li>
-							</ul>
-						  </div>
-						</div>
-			  
-						<div class="col-4 col-12-small">
-						  <div class="card">
-							<div style="text-align: center">
-							  <img height="65" width="65" src="./images/ml.png" alt="">
-							</div>
-			  
-							<ul style="list-style-type: none">
-							  <li>
-								<h3 class="skill-heading" style="
-									text-align: center;
-									font-family: 'Poppins', sans-serif;
-								  ">
-								  Machine Learning
-								</h3>
-							  </li>
-							  <li class="skill-sub" style="text-align: center">
-								Worked on: Random Forest, K Nearest Neighbour Classification, Logistic Regression, XGBoost Classification
-							</ul>
-						  </div>
-						</div>
-					  </div>
-<h2 id="experience" style="text-align: center; font-family: 'Poppins', sans-serif">
-    Experience
-</h2>
-
-<section class="experience-section">
-
-    <!-- WNS -->
-    <div class="exp-card">
-        <div class="exp-header">
-            <h3>WNS Global Services (Capgemini)</h3>
-            <span class="exp-role">Senior Associate - Analytics</span>
-            <span class="exp-date">Apr 2025 – Present | Gurugram</span>
-        </div>
-        <ul>
-            <li>Analyzed large-scale e-commerce transaction datasets using SQL to identify fraud patterns and support ML models.</li>
-            <li>Built data validation and feedback pipelines to improve model precision and reduce false positives.</li>
-            <li>Performed behavioral analysis to enhance risk classification algorithms.</li>
-            <li><b>Awarded Best Employee of the Quarter</b> for analytical excellence.</li>
-        </ul>
+<!-- HERO -->
+<section class="hero container">
+    <div>
+        <h1>Hi, I'm <span>Raghav Kaushik</span></h1>
+        <p id="typing"></p>
+        <a href="#" class="btn">Download Resume</a>
     </div>
-
-    <!-- CRIS -->
-    <div class="exp-card">
-        <div class="exp-header">
-            <h3>Centre for Railway Information Systems (CRIS)</h3>
-            <span class="exp-role">Full Stack Developer Intern</span>
-            <span class="exp-date">Jul 2024 – Feb 2025 | New Delhi</span>
-        </div>
-        <ul>
-            <li>Developed Django backend modules integrated with PostgreSQL for freight monitoring.</li>
-            <li>Optimized complex SQL queries for large datasets to improve performance.</li>
-            <li>Built AJAX-based real-time dashboards for live tracking.</li>
-            <li>Monitored PostgreSQL metrics like locks, idle sessions, and query performance.</li>
-            <li>Implemented logging and structured data handling for system reliability.</li>
-        </ul>
-    </div>
-
 </section>
-					<h2 id="projects" style="text-align: center; font-family: 'Poppins', sans-serif">
-          					Projects
-        				</h2>		
-								
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>										
-										<h2><a href="#">Malware Detection System <br />
-										using Machine Learning</a></h2>
-									</header>
-									<a class="image fit"><img src="images/malwaredetect.png" alt="" /></a>
-									<p>Built a system to detect malware in a dataset provided, using various machine learning algorithms. The proposed
-									model is able to identify 99% of bugs correctly</p>
-							
-								</article>
-								<article>
-									<header>
-										
-										<h2><a href="#">PG Life</a></h2>
-									</header>
-									<a class="image fit"><img src="images/pglife.png" alt="" /></a>
-									<p>A web application that shows the list of all the PG's and their main features in the selected city</p>
-									
-								</article>
-								<article>
-									<header>	
-										<h2><a href="#">Online List<br />
-										Management</a></h2>
-									</header>
-									<a class="image fit"><img src="images/onlinelist.png" alt="" /></a>
-									<p>Designed a data management system which enables admin to manage its things in a correct sequential manner</p>
-								
-								</article>
-								<article>
-									<header>
-										<h2><a href="#">PORTFOLIO</a></h2>
-									</header>
-									<a href="#" class="image fit"><img src="images/portfolio.png" alt="" /></a>
-									<p>Hosted a personal descriptive portfolio using Github where Resume and projects can be updated
-									timely and contact details are provided.</p>							
-								</article>
-									
-							</section>
-						
-					</div>
+<!-- EXPERIENCE -->
+<section class="section container">
+    <h2>Experience</h2>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">							
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">+91 9319101768</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">raghavkaushikk08@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/raghav-kaushik-4b9a69205/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/raghavkaushikk" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://www.facebook.com/raghav.kaushik.08/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="https://www.instagram.com/raghavkaushikk/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							
-								</ul>
-							</section>
-						</section>
-					</footer>
-			
-			</div>
+    <div class="card">
+        <h3>WNS Global Services</h3>
+        <p>Senior Associate - Analytics</p>
+        <p>Analyzed large-scale e-commerce datasets using SQL to detect fraud patterns.</p>
+    </div>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+    <div class="card">
+        <h3>CRIS</h3>
+        <p>Full Stack Developer Intern</p>
+        <p>Built Django backend & real-time dashboards using PostgreSQL and AJAX.</p>
+    </div>
+</section>
 
-	</body>
+<!-- PROJECTS -->
+<section class="section container">
+    <h2>Projects</h2>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Diagnos_DB</h3>
+            <p>Database monitoring tool for PostgreSQL performance.</p>
+        </div>
+
+        <div class="card">
+            <h3>Freight Tracking System</h3>
+            <p>Real-time train tracking system using Django & AJAX.</p>
+        </div>
+
+        <div class="card">
+            <h3>Malware Detection</h3>
+            <p>ML model achieving 99% accuracy.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+const text = ["Data Analyst", "SQL Specialist", "Fraud Detection Enthusiast"];
+let i = 0, j = 0, current = "", isDeleting = false;
+
+function type() {
+    current = text[i];
+    
+    if (!isDeleting) {
+        document.getElementById("typing").innerHTML = current.substring(0, j++);
+        if (j > current.length) {
+            isDeleting = true;
+            setTimeout(type, 1000);
+            return;
+        }
+    } else {
+        document.getElementById("typing").innerHTML = current.substring(0, j--);
+        if (j < 0) {
+            isDeleting = false;
+            i = (i + 1) % text.length;
+        }
+    }
+    setTimeout(type, isDeleting ? 50 : 100);
+}
+type();
+</script>
+
+</body>
 </html>
