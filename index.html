@@ -8,17 +8,45 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --bg: #0f172a;
+    --text: #e2e8f0;
+    --card: #1e293b;
+    --accent: #38bdf8;
+}
+
+.light-mode {
+    --bg: #ffffff;
+    --text: #0f172a;
+    --card: #f1f5f9;
+    --accent: #2563eb;
+}
+
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background: #0f172a;
-    color: #e2e8f0;
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
 }
 
 .container {
     width: 90%;
     max-width: 1100px;
     margin: auto;
+}
+
+/* TOGGLE */
+#themeToggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background: var(--card);
+    color: var(--text);
 }
 
 /* HERO */
@@ -32,8 +60,15 @@ body {
     font-size: 48px;
 }
 
-.hero span {
-    color: #38bdf8;
+.hero p {
+    color: #94a3b8;
+}
+
+.tags span {
+    background: var(--card);
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin-right: 8px;
 }
 
 /* SECTION */
@@ -41,9 +76,13 @@ body {
     padding: 80px 0;
 }
 
-/* CARDS */
+h2 {
+    margin-bottom: 30px;
+}
+
+/* CARD */
 .card {
-    background: #1e293b;
+    background: var(--card);
     padding: 20px;
     border-radius: 12px;
     margin-bottom: 20px;
@@ -65,23 +104,41 @@ body {
 .btn {
     display: inline-block;
     padding: 10px 20px;
-    background: #38bdf8;
-    color: black;
+    background: var(--accent);
+    color: white;
     border-radius: 8px;
     text-decoration: none;
-    margin-top: 10px;
+    margin-top: 15px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #94a3b8;
 }
 </style>
 </head>
 
 <body>
 
+<button id="themeToggle">🌙</button>
+
 <!-- HERO -->
 <section class="hero container">
     <div>
-        <h1>Hi, I'm <span>Raghav Kaushik</span></h1>
-        <p id="typing"></p>
-        <a href="#" class="btn">Download Resume</a>
+        <h1>Raghav Kaushik</h1>
+        <p>Senior Associate - Analytics | Risk Analyst at WNS Global Services (Capgemini)</p>
+
+        <div class="tags">
+            <span>SQL</span>
+            <span>Data Analysis</span>
+            <span>Fraud Analytics</span>
+            <span>Python</span>
+            <span>PostgreSQL</span>
+        </div>
+
+        <a href="https://drive.google.com/file/d/1qJhoOgX1Bm5QHaPHOjsKE4IK32VDwuGA/view?usp=sharing" class="btn">Download Resume</a>
     </div>
 </section>
 
@@ -90,15 +147,26 @@ body {
     <h2>Experience</h2>
 
     <div class="card">
-        <h3>WNS Global Services</h3>
-        <p>Senior Associate - Analytics</p>
-        <p>Analyzed large-scale e-commerce datasets using SQL to detect fraud patterns.</p>
+        <h3>WNS Global Services (Capgemini)</h3>
+        <p><b>Senior Associate - Analytics</b></p>
+        <p>Apr 2025 – Present | Gurugram</p>
+        <ul>
+            <li>Analyzed large-scale e-commerce transaction datasets using SQL to identify fraud patterns.</li>
+            <li>Built data validation pipelines improving model precision.</li>
+            <li>Performed behavioral analysis for risk classification.</li>
+            <li><b>Best Employee of the Quarter</b></li>
+        </ul>
     </div>
 
     <div class="card">
         <h3>CRIS</h3>
-        <p>Full Stack Developer Intern</p>
-        <p>Built Django backend & real-time dashboards using PostgreSQL and AJAX.</p>
+        <p><b>Full Stack Developer Intern</b></p>
+        <p>Jul 2024 – Feb 2025</p>
+        <ul>
+            <li>Developed Django backend with PostgreSQL.</li>
+            <li>Optimized SQL queries for large datasets.</li>
+            <li>Built real-time dashboards using AJAX.</li>
+        </ul>
     </div>
 </section>
 
@@ -109,45 +177,72 @@ body {
     <div class="grid">
         <div class="card">
             <h3>Diagnos_DB</h3>
-            <p>Database monitoring tool for PostgreSQL performance.</p>
+            <p>PostgreSQL monitoring system for query performance and system health.</p>
         </div>
 
         <div class="card">
-            <h3>Freight Tracking System</h3>
-            <p>Real-time train tracking system using Django & AJAX.</p>
+            <h3>Freight Tracking</h3>
+            <p>Real-time freight movement system using Django & AJAX.</p>
         </div>
 
         <div class="card">
             <h3>Malware Detection</h3>
             <p>ML model achieving 99% accuracy.</p>
         </div>
+
+        <div class="card">
+            <h3>PG Life</h3>
+            <p>Web app for PG listings by city.</p>
+        </div>
     </div>
 </section>
 
-<script>
-const text = ["Data Analyst", "SQL Specialist", "Fraud Detection Enthusiast"];
-let i = 0, j = 0, current = "", isDeleting = false;
+<!-- SKILLS -->
+<section class="section container">
+    <h2>Skills</h2>
 
-function type() {
-    current = text[i];
-    
-    if (!isDeleting) {
-        document.getElementById("typing").innerHTML = current.substring(0, j++);
-        if (j > current.length) {
-            isDeleting = true;
-            setTimeout(type, 1000);
-            return;
-        }
-    } else {
-        document.getElementById("typing").innerHTML = current.substring(0, j--);
-        if (j < 0) {
-            isDeleting = false;
-            i = (i + 1) % text.length;
-        }
-    }
-    setTimeout(type, isDeleting ? 50 : 100);
+    <div class="grid">
+        <div class="card"><h3>Programming</h3><p>Python, SQL, C/C++, JavaScript</p></div>
+        <div class="card"><h3>Frameworks</h3><p>Django</p></div>
+        <div class="card"><h3>Databases</h3><p>PostgreSQL, MySQL</p></div>
+        <div class="card"><h3>Core Strengths</h3><p>Backend Dev, Query Optimization, Fraud Analytics</p></div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section container">
+    <h2>Contact</h2>
+    <p>📞 +91 9319101768</p>
+    <p>📧 raghavkaushikk08@gmail.com</p>
+    <p>
+        <a href="https://github.com/raghavkaushikk">GitHub</a> |
+        <a href="https://www.linkedin.com/in/raghav-kaushik-4b9a69205/">LinkedIn</a>
+    </p>
+</section>
+
+<footer>
+    © 2026 Raghav Kaushik
+</footer>
+
+<script>
+const toggle = document.getElementById("themeToggle");
+
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    toggle.innerText = "☀️";
 }
-type();
+
+toggle.onclick = () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+        localStorage.setItem("theme", "light");
+        toggle.innerText = "☀️";
+    } else {
+        localStorage.setItem("theme", "dark");
+        toggle.innerText = "🌙";
+    }
+};
 </script>
 
 </body>
