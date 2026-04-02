@@ -15,6 +15,60 @@
 			body, div, a, p, span{ user-select: text !important; }
 			p, h1, h2, h3, h4, h5, h6{ cursor: auto; user-select: text !important; }
 			::selection{ background-color: #338FFF !important; color: #fff !important; }
+			/* EXPERIENCE SECTION */
+.experience-section {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+/* CARD STYLE */
+.exp-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px 30px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-5px);
+}
+
+/* HEADER */
+.exp-header h3 {
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.exp-role {
+    display: block;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.exp-date {
+    font-size: 14px;
+    color: #888;
+}
+
+/* BULLETS */
+.exp-card ul {
+    margin-top: 15px;
+    padding-left: 20px;
+}
+
+.exp-card ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* SUBTLE LEFT BORDER ACCENT */
+.exp-card {
+    border-left: 4px solid #338FFF;
+}
 		</style>
 	</head>
 	<body class>
@@ -131,42 +185,38 @@
     Experience
 </h2>
 
-<section class="posts">
+<section class="experience-section">
 
-    <!-- WNS Experience -->
-    <article>
-        <header>
-            <h2>
-                WNS Global Services (Capgemini)<br />
-                <span style="font-size: 16px;">Senior Associate - Analytics</span>
-            </h2>
-            <p>Apr 2025 – Present | Gurugram, Haryana</p>
-        </header>
-        <p>
-            • Analyzed large-scale e-commerce transaction datasets using SQL to identify fraud patterns and support ML models.<br>
-            • Built data validation and feedback pipelines to improve model precision and reduce false positives.<br>
-            • Performed behavioral analysis to enhance risk classification algorithms.<br>
-            • Awarded <b>Best Employee of the Quarter</b> for analytical excellence.
-        </p>
-    </article>
+    <!-- WNS -->
+    <div class="exp-card">
+        <div class="exp-header">
+            <h3>WNS Global Services (Capgemini)</h3>
+            <span class="exp-role">Senior Associate - Analytics</span>
+            <span class="exp-date">Apr 2025 – Present | Gurugram</span>
+        </div>
+        <ul>
+            <li>Analyzed large-scale e-commerce transaction datasets using SQL to identify fraud patterns and support ML models.</li>
+            <li>Built data validation and feedback pipelines to improve model precision and reduce false positives.</li>
+            <li>Performed behavioral analysis to enhance risk classification algorithms.</li>
+            <li><b>Awarded Best Employee of the Quarter</b> for analytical excellence.</li>
+        </ul>
+    </div>
 
-    <!-- CRIS Experience -->
-    <article>
-        <header>
-            <h2>
-                Centre for Railway Information Systems (CRIS)<br />
-                <span style="font-size: 16px;">Full Stack Developer Intern</span>
-            </h2>
-            <p>Jul 2024 – Feb 2025 | New Delhi, India</p>
-        </header>
-        <p>
-            • Developed Django backend modules integrated with PostgreSQL for freight monitoring.<br>
-            • Optimized complex SQL queries for large datasets to improve performance.<br>
-            • Built AJAX-based real-time dashboards for live tracking.<br>
-            • Monitored PostgreSQL metrics like locks, idle sessions, and query performance.<br>
-            • Implemented logging and structured data handling for system reliability.
-        </p>
-    </article>
+    <!-- CRIS -->
+    <div class="exp-card">
+        <div class="exp-header">
+            <h3>Centre for Railway Information Systems (CRIS)</h3>
+            <span class="exp-role">Full Stack Developer Intern</span>
+            <span class="exp-date">Jul 2024 – Feb 2025 | New Delhi</span>
+        </div>
+        <ul>
+            <li>Developed Django backend modules integrated with PostgreSQL for freight monitoring.</li>
+            <li>Optimized complex SQL queries for large datasets to improve performance.</li>
+            <li>Built AJAX-based real-time dashboards for live tracking.</li>
+            <li>Monitored PostgreSQL metrics like locks, idle sessions, and query performance.</li>
+            <li>Implemented logging and structured data handling for system reliability.</li>
+        </ul>
+    </div>
 
 </section>
 					<h2 id="projects" style="text-align: center; font-family: 'Poppins', sans-serif">
