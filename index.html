@@ -94,26 +94,80 @@ body {
 
 /* NAVBAR */
 .navbar {
-    position: sticky;
-    top: 0;
-    backdrop-filter: blur(12px);
-    background: var(--card);
-    padding: 15px 8%;
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    z-index: 1000;
+
+    backdrop-filter: blur(14px);
+    background: rgba(15,23,42,0.55);
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    border-radius: 20px;
+
+    padding: 16px 30px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: var(--transition);
+
+    transition: 0.3s ease;
+
+    box-shadow:
+    0 8px 30px rgba(0,0,0,0.15);
 }
 
-.navbar h3 {
+/* LOGO */
+.logo {
     margin: 0;
     font-weight: 600;
+    font-size: 20px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* TOGGLE */
 #themeToggle {
     cursor: pointer;
     font-size: 18px;
+    margin-left: 10px;
 }
 
 /* HERO */
@@ -327,8 +381,20 @@ footer {
 
 <!-- NAVBAR -->
 <div class="navbar">
-    <h3>Raghav Kaushik</h3>
-    <div id="themeToggle">🌙</div>
+
+    <h3 class="logo">Raghav Kaushik</h3>
+
+    <div class="nav-links">
+
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+
+        <div id="themeToggle">🌙</div>
+
+    </div>
+
 </div>
 
 <!-- HERO -->
@@ -422,7 +488,7 @@ footer {
 </section>
 
 <!-- PROJECTS -->
-<section class="section reveal">
+<section class="section reveal" id="projects">
     <h2>Projects</h2>
 
     <div class="grid">
@@ -485,7 +551,7 @@ footer {
 </section>
 
 <!-- SKILLS -->
-<section class="section reveal">
+<section class="section reveal" id="skills">
     <h2>Skills</h2>
 
     <div class="grid">
@@ -498,7 +564,7 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section class="section reveal">
+<section class="section reveal" id="contact">
     <h2>Contact</h2>
     <p>📧 raghavkaushikk08@gmail.com</p>
     <p>📞 +91 9319101768</p>
