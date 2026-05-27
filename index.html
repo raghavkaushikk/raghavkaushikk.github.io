@@ -274,6 +274,18 @@ h2 {
     transform: translateY(-6px);
 }
 
+/* SCROLL REVEAL */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* GRID */
 .grid {
     display: grid;
@@ -383,7 +395,7 @@ footer {
 </section>
 
 <!-- EXPERIENCE -->
-<section class="section" id="experience">
+<section class="section reveal" id="experience">
     <h2>Experience</h2>
 
     <div class="card">
@@ -410,7 +422,7 @@ footer {
 </section>
 
 <!-- PROJECTS -->
-<section class="section">
+<section class="section reveal">
     <h2>Projects</h2>
 
     <div class="grid">
@@ -473,7 +485,7 @@ footer {
 </section>
 
 <!-- SKILLS -->
-<section class="section">
+<section class="section reveal">
     <h2>Skills</h2>
 
     <div class="grid">
@@ -486,7 +498,7 @@ footer {
 </section>
 
 <!-- CONTACT -->
-<section class="section">
+<section class="section reveal">
     <h2>Contact</h2>
     <p>📧 raghavkaushikk08@gmail.com</p>
     <p>📞 +91 9319101768</p>
@@ -523,6 +535,31 @@ toggle.onclick = () => {
         toggle.innerText = "🌙";
     }
 };
+</script>
+
+<script>
+
+/* SCROLL REVEAL */
+function revealSections() {
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach((section) => {
+
+        const windowHeight = window.innerHeight;
+        const revealTop = section.getBoundingClientRect().top;
+
+        if (revealTop < windowHeight - 100) {
+            section.classList.add("active");
+        }
+
+    });
+}
+
+window.addEventListener("scroll", revealSections);
+
+revealSections();
+
 </script>
 
 </body>
