@@ -4,10 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Raghav Kaushik | Portfolio</title>
+<link rel="preload" as="image" href="images/profile.webp">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    scroll-padding-top: 80px;
+}
+    
 :root {
     --bg: #0f172a;
     --text: #e2e8f0;
@@ -135,6 +145,13 @@ body {
     object-fit: cover;
     position: relative;
     z-index: 2;
+}
+.hero-right img {
+    width: 420px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 30px;
+    object-fit: cover;
 }
 
 /* GLOW */
@@ -304,7 +321,7 @@ footer {
     <!-- RIGHT SIDE IMAGE -->
     <div class="hero-right">
 
-        <img src="images/profile.png" alt="Raghav Kaushik">
+        <img src="images/profile.webp" alt="Raghav Kaushik" loading="lazy">
 
     </div>
 
