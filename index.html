@@ -409,7 +409,7 @@ footer {
         </h1>
 
         <p>
-            Senior Associate - Analytics | Risk Analyst | SQL Specialist
+            <span id="typing"></span>
         </p>
 
         <!-- BUTTONS -->
@@ -625,6 +625,64 @@ function revealSections() {
 window.addEventListener("scroll", revealSections);
 
 revealSections();
+
+</script>
+
+<script>
+
+const roles = [
+    "Senior Associate – Analytics",
+    "Risk Analyst",
+    "SQL Specialist",
+    "Backend Developer",
+    "Fraud Analytics Enthusiast"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+
+const typingElement = document.getElementById("typing");
+
+function typeRole() {
+
+    if (charIndex < roles[roleIndex].length) {
+
+        typingElement.innerHTML += roles[roleIndex].charAt(charIndex);
+
+        charIndex++;
+
+        setTimeout(typeRole, 80);
+
+    } else {
+
+        setTimeout(eraseRole, 1800);
+    }
+}
+
+function eraseRole() {
+
+    if (charIndex > 0) {
+
+        typingElement.innerHTML =
+        roles[roleIndex].substring(0, charIndex - 1);
+
+        charIndex--;
+
+        setTimeout(eraseRole, 40);
+
+    } else {
+
+        roleIndex++;
+
+        if (roleIndex >= roles.length) {
+            roleIndex = 0;
+        }
+
+        setTimeout(typeRole, 300);
+    }
+}
+
+typeRole();
 
 </script>
 
