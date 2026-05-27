@@ -58,23 +58,120 @@ body {
 
 /* HERO */
 .hero {
-    height: 90vh;
+    min-height: 100vh;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     padding: 0 8%;
+    gap: 60px;
+    position: relative;
+}
+
+/* LEFT */
+.hero-left {
+    flex: 1;
 }
 
 .hero h1 {
-    font-size: 48px;
+    font-size: 72px;
+    line-height: 1.1;
+    margin-bottom: 20px;
 }
 
 .hero span {
-    color: var(--accent);
+    background: linear-gradient(135deg,#38bdf8,#6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .hero p {
     color: #94a3b8;
-    margin-top: 10px;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* BUTTONS */
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* SOCIALS */
+.socials {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.socials a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+/* RIGHT IMAGE */
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-right img {
+    width: 420px;
+    border-radius: 30px;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+/* GLOW */
+.hero-right::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle,#2563eb55,#00000000);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* SCROLL */
+.scroll-down {
+    margin-top: 60px;
+}
+
+.scroll-down a {
+    color: white;
+    font-size: 42px;
+    text-decoration: none;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%,20%,50%,80%,100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(10px);
+    }
+
+    60% {
+        transform: translateY(5px);
+    }
 }
 
 /* BUTTON */
@@ -152,15 +249,69 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <div>
-        <h1>Hi, I'm <span>Raghav Kaushik</span></h1>
-        <p>Senior Associate - Analytics | Risk Analyst | SQL Specialist</p>
-        <a href="https://drive.google.com/file/d/1G2R8nVNQiKWjFxbq3bTZSkeAbncQ_hkE/view?usp=sharing" target="_blank" class="btn">View Resume</a>
+
+    <!-- LEFT CONTENT -->
+    <div class="hero-left">
+
+        <h1>
+            Hi, I'm <br>
+            <span>Raghav Kaushik</span>
+        </h1>
+
+        <p>
+            Senior Associate - Analytics | Risk Analyst | SQL Specialist
+        </p>
+
+        <!-- BUTTONS -->
+        <div class="hero-buttons">
+
+            <a href="https://drive.google.com/file/d/1G2R8nVNQiKWjFxbq3bTZSkeAbncQ_hkE/view?usp=sharing"
+               target="_blank"
+               class="btn">
+               View Resume
+            </a>
+
+            <a href="https://drive.google.com/uc?export=download&id=1G2R8nVNQiKWjFxbq3bTZSkeAbncQ_hkE"
+               target="_blank"
+               class="btn secondary-btn">
+               Download Resume
+            </a>
+
+        </div>
+
+        <!-- SOCIALS -->
+        <div class="socials">
+
+            <a href="https://github.com/raghavkaushikk" target="_blank">GitHub</a>
+
+            <a href="https://www.linkedin.com/in/raghav-kaushik-4b9a69205/" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="https://youtu.be/5mQHmHrt9dU" target="_blank">
+                YouTube
+            </a>
+
+        </div>
+
+        <!-- SCROLL -->
+        <div class="scroll-down">
+            <a href="#experience">⌄</a>
+        </div>
+
     </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="hero-right">
+
+        <img src="images/profile.png" alt="Raghav Kaushik">
+
+    </div>
+
 </section>
 
 <!-- EXPERIENCE -->
-<section class="section">
+<section class="section" id="experience">
     <h2>Experience</h2>
 
     <div class="card">
