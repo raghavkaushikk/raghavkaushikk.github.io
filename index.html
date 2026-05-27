@@ -42,6 +42,56 @@ body {
     transition: background var(--transition), color var(--transition);
 }
 
+/* BACKGROUND GLOW */
+.bg-blur {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(120px);
+    z-index: -1;
+    opacity: 0.25;
+    animation: float 12s ease-in-out infinite;
+}
+
+.blur1 {
+    width: 300px;
+    height: 300px;
+    background: #2563eb;
+    top: 10%;
+    left: -100px;
+}
+
+.blur2 {
+    width: 350px;
+    height: 350px;
+    background: #7c3aed;
+    top: 50%;
+    right: -120px;
+    animation-delay: 3s;
+}
+
+.blur3 {
+    width: 250px;
+    height: 250px;
+    background: #38bdf8;
+    bottom: 0;
+    left: 40%;
+    animation-delay: 6s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
 /* NAVBAR */
 .navbar {
     position: sticky;
@@ -257,6 +307,11 @@ footer {
 </head>
 
 <body>
+
+<!-- BACKGROUND GLOW -->
+<div class="bg-blur blur1"></div>
+<div class="bg-blur blur2"></div>
+<div class="bg-blur blur3"></div>
 
 <!-- NAVBAR -->
 <div class="navbar">
