@@ -203,6 +203,21 @@ body {
     font-size: 20px;
     margin-bottom: 30px;
 }
+#typing {
+    display: inline-block;
+    min-height: 32px;
+}
+
+#typing::after {
+    content: "|";
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
 
 /* BUTTONS */
 .hero-buttons {
